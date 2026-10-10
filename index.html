@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DESKFLOW // BRUTALIST PC WELLNESS</title>
+    <link rel="icon" type="image/x-icon" href="/icon.ico" />
+    <link rel="icon" type="image/png" href="/icon.png" />
+    <link rel="apple-touch-icon" href="/icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#FFE600" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app" class="brutalist-shell">
+      <!-- TOP STATUS BAR -->
+      <header class="raw-header">
+        <div class="header-left">
+          <div class="logo-box">DF_0.2</div>
+          <div class="title-meta">
+            <h1>DESKFLOW</h1>
+            <span class="sub-label">HUMAN DECOMPRESSION & RECOVERY SYSTEM</span>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <div class="status-indicator">
+            <span class="status-dot"></span>
+            <span id="session-status">STANDBY</span>
+          </div>
+          <button id="btn-zen-panic" class="b-btn warning" title="Instant Blackout Screen Pause">
+            BLACKOUT REST
+          </button>
+          <button id="btn-theme-toggle" class="b-btn secondary" title="Toggle Stark Light/Dark Mode">
+            <span id="theme-label">DARK_MODE</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- BRUTALIST NAVIGATION TABS -->
+      <nav class="raw-nav">
+        <button class="b-nav-tab active" data-tab="tab-breathing">
+          <span class="tab-idx">01</span> NEURO-BREATH
+        </button>
+        <button class="b-nav-tab" data-tab="tab-eyes">
+          <span class="tab-idx">02</span> SACCADIC EYES
+        </button>
+        <button class="b-nav-tab" data-tab="tab-somatic">
+          <span class="tab-idx">03</span> SOMATIC UNCLENCH
+        </button>
+        <button class="b-nav-tab" data-tab="tab-binaural">
+          <span class="tab-idx">04</span> BINAURAL WAVES
+        </button>
+        <button class="b-nav-tab" data-tab="tab-clock">
+          <span class="tab-idx">05</span> WORK // HYDRATE
+        </button>
+        <button class="b-nav-tab" data-tab="tab-scratch">
+          <span class="tab-idx">06</span> BRAIN DUMP
+        </button>
+      </nav>
+
+      <!-- MAIN DECK -->
+      <main class="raw-deck">
+
+        <!-- TAB 01: NEURO-RESPIRATORY (PHYSIOLOGICAL SIGH & BOX BREATHING) -->
+        <section id="tab-breathing" class="tab-view active">
+          <div class="deck-grid-2">
+            <!-- Physiological Sigh Module -->
+            <div class="b-card hero-card">
+              <div class="b-card-header">
+                <span class="b-tag primary">NEUROBIOLOGICAL RESET</span>
+                <span class="b-badge">HUBERMAN PROTOCOL</span>
+              </div>
+              <h2>THE PHYSIOLOGICAL SIGH</h2>
+              <p class="b-lead">
+                Fastest autonomic nervous system depressant. Inhale deeply through nose, take a 2nd quick top-off inhale to inflate collapsed alveoli, then a long, slow mouth exhale.
+              </p>
+
+              <div class="breath-visualizer-box">
+                <div class="breath-phase-label" id="sigh-phase-text">PRESS START TO INITIATE</div>
+                <div class="breath-gauge-wrap">
+                  <div class="breath-gauge-bar" id="sigh-gauge-bar"></div>
+                </div>
+                <div class="breath-sub-text" id="sigh-instruction">2-3 cycles down-regulates autonomic stress immediately.</div>
+                <div class="cycle-tally">ROUNDS COMPLETED: <span id="sigh-round-count" class="tally-num">0</span></div>
+              </div>
+
+              <div class="b-action-row">
+                <button id="btn-sigh-toggle" class="b-btn primary lg">START SIGH PACER</button>
+                <button id="btn-sigh-reset" class="b-btn secondary">RESET</button>
+              </div>
+            </div>
+
+            <!-- Box Breathing & 4-7-8 Modes -->
+            <div class="b-card">
+              <div class="b-card-header">
+                <span class="b-tag">TACTICAL PACING</span>
+                <span class="b-badge">HEART RATE VARIABILITY</span>
+              </div>
+              <h2>BOX BREATH (4-4-4-4)</h2>
+              <p class="b-desc">Used by Navy SEALs to regain mental clarity under high cognitive load.</p>
+
+              <div class="box-pacer-box">
+                <div class="square-container">
+                  <div class="box-square" id="box-indicator"></div>
+                  <div class="box-center-text" id="box-phase-name">IDLE</div>
+                  <div class="box-timer-num" id="box-phase-sec">4</div>
+                </div>
+              </div>
+
+              <div class="b-action-row center">
+                <button id="btn-box-toggle" class="b-btn accent lg">START BOX SESSION</button>
+                <button id="btn-box-reset" class="b-btn secondary">RESET</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 02: SACCADIC EYES & 20-20-20 -->
+        <section id="tab-eyes" class="tab-view">
+          <div class="deck-grid-2">
+            <!-- Bilateral Saccadic Movement -->
+            <div class="b-card">
+              <div class="b-card-header">
+                <span class="b-tag cyan">EMDR-INSPIRED</span>
+                <span class="b-badge">PERIPHERAL EXPANSION</span>
+              </div>
+              <h2>BILATERAL EYE DESENSITIZATION</h2>
+              <p class="b-desc">
+                Screens force a narrow visual field that locks brain in hyper-vigilance. Follow the high-contrast target left-to-right without turning your head to restore optical flow and calm the amygdala.
+              </p>
+
+              <div class="saccadic-track-box">
+                <div class="track-line">
+                  <div class="saccadic-dot" id="saccadic-dot"></div>
+                </div>
+                <div class="track-meta">KEEP HEAD STILL · TRACK SMOOTHLY WITH EYES ONLY</div>
+              </div>
+
+              <div class="speed-selector-row">
+                <span class="row-label">SPEED:</span>
+                <button class="b-chip active" data-speed="slow">0.3 Hz (CALM)</button>
+                <button class="b-chip" data-speed="med">0.6 Hz (STEADY)</button>
+                <button class="b-chip" data-speed="fast">1.0 Hz (RAPID)</button>
+              </div>
+
+              <div class="b-action-row">
+                <button id="btn-saccadic-toggle" class="b-btn cyan-btn lg">ACTIVATE TRACKER</button>
+              </div>
+            </div>
+
+            <!-- 20-20-20 Brutalist Rule -->
+            <div class="b-card">
+              <div class="b-card-header">
+                <span class="b-tag green">OPTIC RELIEF</span>
+                <span class="b-badge">TIMER</span>
+              </div>
+              <h2>20-20-20 EYE PRESERVATION</h2>
+              <p class="b-desc">
+                Every 20 minutes, shift focal distance to 20+ feet away for at least 20 seconds.
+              </p>
+
+              <div class="big-counter-box">
+                <div class="stark-digits" id="eye-timer-text">20:00</div>
+                <div class="raw-progress-track">
+                  <div class="raw-progress-bar" id="eye-progress-fill" style="width: 100%;"></div>
+                </div>
+              </div>
+
+              <div class="b-action-row">
+                <button id="btn-eye-start" class="b-btn primary">START 20M COUNTDOWN</button>
+                <button id="btn-eye-reset" class="b-btn secondary">RESET</button>
+                <button id="btn-trigger-overlay" class="b-btn warning">MANUAL 20S BREAK</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 03: SOMATIC UNCLENCH -->
+        <section id="tab-somatic" class="tab-view">
+          <div class="b-card">
+            <div class="b-card-header">
+              <span class="b-tag pink">SOMATIC AWARENESS</span>
+              <span class="b-badge">KEYBOARD REHABILITATION</span>
+            </div>
+            <h2>SOMATIC DECOMPRESSION PROTOCOLS</h2>
+            <p class="b-desc">Computer fatigue accumulates silently in the temporomandibular joint (jaw), trapezius, and carpal tunnel. Select any protocol for an automated 20-second release.</p>
+
+            <div class="somatic-cards-grid">
+              <div class="somatic-tile" data-somatic="jaw">
+                <div class="tile-header">
+                  <span class="tile-code">S_01</span>
+                  <h4>JAW UNCLENCH & TONGUE DROP</h4>
+                </div>
+                <p>Drop lower jaw slightly, part teeth, and let tongue rest loosely on the floor of mouth. Exhale with a soft sigh.</p>
+                <button class="b-btn tile-btn">TRIGGER 20S RELEASE</button>
+              </div>
+
+              <div class="somatic-tile" data-somatic="shoulders">
+                <div class="tile-header">
+                  <span class="tile-code">S_02</span>
+                  <h4>SCAPULAR RETRACTION</h4>
+                </div>
+                <p>Pull shoulder blades backward and down toward back pockets. Hold chest open without arching lower spine.</p>
+                <button class="b-btn tile-btn">TRIGGER 20S RELEASE</button>
+              </div>
+
+              <div class="somatic-tile" data-somatic="palming">
+                <div class="tile-header">
+                  <span class="tile-code">S_03</span>
+                  <h4>PALMING DARKNESS THERAPY</h4>
+                </div>
+                <p>Rub palms together vigorously until warm. Cup hands gently over closed eyes without touching eyeballs to flood retina with pitch darkness.</p>
+                <button class="b-btn tile-btn">TRIGGER 20S RELEASE</button>
+              </div>
+
+              <div class="somatic-tile" data-somatic="median">
+                <div class="tile-header">
+                  <span class="tile-code">S_04</span>
+                  <h4>MEDIAN NERVE GLIDE</h4>
+                </div>
+                <p>Make a fist, extend fingers, bend wrist backward, turn palm up, and gently stretch thumb away from hand to decompress carpal tunnel.</p>
+                <button class="b-btn tile-btn">TRIGGER 20S RELEASE</button>
+              </div>
+            </div>
+
+            <!-- Active Somatic Release Banner -->
+            <div id="somatic-active-box" class="somatic-active-banner hidden">
+              <div class="banner-info">
+                <span class="banner-title" id="somatic-active-title">RELEASE IN PROGRESS</span>
+                <span class="banner-desc" id="somatic-active-desc">Breathe smoothly. Release all residual contraction.</span>
+              </div>
+              <div class="banner-timer" id="somatic-countdown">20</div>
+              <button id="btn-cancel-somatic" class="b-btn secondary">CANCEL</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 04: BINAURAL WAVES & AUDIO SHIELDING -->
+        <section id="tab-binaural" class="tab-view">
+          <div class="deck-grid-2">
+            <!-- True Binaural Beat Generator -->
+            <div class="b-card">
+              <div class="b-card-header">
+                <span class="b-tag primary">STEREO FREQUENCY ENTRAINMENT</span>
+                <span class="b-badge">HEADPHONES REQUIRED</span>
+              </div>
+              <h2>BINAURAL BEAT ENGINE</h2>
+              <p class="b-desc">Generates exact mathematical frequency offsets between left and right ear to synchronize brainwave states.</p>
+
+              <div class="binaural-controls">
+                <div class="binaural-row">
+                  <div class="binaural-label">
+                    <strong>ALPHA WAVE (10 Hz)</strong>
+                    <span>Deep focus, alert calm, relaxed flow state.</span>
+                  </div>
+                  <button class="b-btn b-wave-btn" data-wave="alpha">ACTIVATE ALPHA</button>
+                </div>
+
+                <div class="binaural-row">
+                  <div class="binaural-label">
+                    <strong>THETA WAVE (6 Hz)</strong>
+                    <span>Intuitive thinking, stress reduction, meditation.</span>
+                  </div>
+                  <button class="b-btn b-wave-btn" data-wave="theta">ACTIVATE THETA</button>
+                </div>
+
+                <div class="binaural-row">
+                  <div class="binaural-label">
+                    <strong>DELTA WAVE (2.5 Hz)</strong>
+                    <span>Deep restoration, somatic tension reset.</span>
+                  </div>
+                  <button class="b-btn b-wave-btn" data-wave="delta">ACTIVATE DELTA</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Auditory Masking -->
+            <div class="b-card">
+              <div class="b-card-header">
+                <span class="b-tag cyan">AUDITORY SHIELDING</span>
+                <span class="b-badge">PROCEDURAL SYNTHESIS</span>
+              </div>
+              <h2>ACOUSTIC MASKING NOISE</h2>
+              <p class="b-desc">Pure synthetic continuous acoustic signals to cancel erratic background chatter and home/office noises.</p>
+
+              <div class="binaural-controls">
+                <div class="binaural-row">
+                  <div class="binaural-label">
+                    <strong>HEAVY BROWN NOISE</strong>
+                    <span>Dense, warm sub-frequencies without harsh high-end hiss.</span>
+                  </div>
+                  <button class="b-btn b-noise-btn" data-noise="brown">ENGAGE NOISE</button>
+                </div>
+
+                <div class="binaural-row">
+                  <div class="binaural-label">
+                    <strong>SYNTHETIC RAINFALL</strong>
+                    <span>Low-pass filtered natural rain wash.</span>
+                  </div>
+                  <button class="b-btn b-noise-btn" data-noise="rain">ENGAGE RAIN</button>
+                </div>
+              </div>
+
+              <div class="noise-status-box" id="audio-live-indicator">
+                AUDIO ENGINE: OFF
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 05: WORK // REST CLOCK & HYDRATION -->
+        <section id="tab-clock" class="tab-view">
+          <div class="deck-grid-2">
+            <!-- Brutalist Pomodoro -->
+            <div class="b-card">
+              <div class="b-card-header">
+                <span class="b-tag primary">INTERVAL TIMER</span>
+                <div class="mode-chips">
+                  <button class="b-chip active" data-pomo="work">WORK 25M</button>
+                  <button class="b-chip" data-pomo="short">SHORT 5M</button>
+                  <button class="b-chip" data-pomo="long">LONG 15M</button>
+                </div>
+              </div>
+
+              <div class="big-counter-box text-center">
+                <div class="stark-digits giant" id="pomo-clock-text">25:00</div>
+                <div class="clock-label" id="pomo-clock-label">[STATUS: FOCUS WORK BLOCK]</div>
+              </div>
+
+              <div class="b-action-row center">
+                <button id="btn-pomo-toggle" class="b-btn primary lg">START WORK BLOCK</button>
+                <button id="btn-pomo-reset" class="b-btn secondary lg">RESET</button>
+              </div>
+            </div>
+
+            <!-- Tactile Block Hydration -->
+            <div class="b-card">
+              <div class="b-card-header">
+                <span class="b-tag cyan">FLUID MONITOR</span>
+                <span class="b-badge" id="hydration-pct">0% LOGGED</span>
+              </div>
+              <h2>TACTILE HYDRATION METER</h2>
+              <p class="b-desc">Target: 2,000 mL daily. Each stamp adds 250 mL.</p>
+
+              <!-- 8 Brutalist Meter Blocks -->
+              <div class="hydration-meter-blocks" id="hydration-blocks">
+                <div class="h-block" data-idx="0">250</div>
+                <div class="h-block" data-idx="1">500</div>
+                <div class="h-block" data-idx="2">750</div>
+                <div class="h-block" data-idx="3">1000</div>
+                <div class="h-block" data-idx="4">1250</div>
+                <div class="h-block" data-idx="5">1500</div>
+                <div class="h-block" data-idx="6">1750</div>
+                <div class="h-block" data-idx="7">2000</div>
+              </div>
+
+              <div class="hydration-counter-meta">
+                CURRENT TOTAL: <span id="water-current-num">0</span> / 2,000 mL
+              </div>
+
+              <div class="b-action-row">
+                <button id="btn-stamp-water" class="b-btn cyan-btn lg">+ STAMP 250 ML</button>
+                <button id="btn-reset-water" class="b-btn secondary">RESET TODAY</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 06: RAW BRAIN DUMP SCRATCHPAD -->
+        <section id="tab-scratch" class="tab-view">
+          <div class="b-card">
+            <div class="b-card-header">
+              <span class="b-tag">UNFILTERED BUFFER</span>
+              <div class="scratch-metrics">
+                <span id="scratch-words">0 WORDS</span> · <span id="scratch-chars">0 CHARS</span>
+              </div>
+            </div>
+            <h2>TACTICAL BRAIN DUMP</h2>
+            <p class="b-desc">Immediate cognitive offloading. Clean thoughts out of RAM into persistent local storage.</p>
+
+            <textarea id="raw-scratchpad" placeholder="Type raw notes, snippets, task dumps, or links... (Auto-persisted to LocalStorage)"></textarea>
+
+            <div class="b-action-row">
+              <button id="btn-copy-dump" class="b-btn primary">COPY TO CLIPBOARD</button>
+              <button id="btn-clean-dump" class="b-btn secondary">STRIP EXTRA SPACES</button>
+              <button id="btn-upper-dump" class="b-btn secondary">UPPERCASE</button>
+              <button id="btn-lower-dump" class="b-btn secondary">lowercase</button>
+              <button id="btn-clear-dump" class="b-btn warning">PURGE BUFFER</button>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- BLACKOUT FULLSCREEN ZEN OVERLAY -->
+      <div id="blackout-screen" class="blackout-overlay hidden">
+        <div class="blackout-content">
+          <div class="blackout-header">[BLACKOUT REST // EYES OFF SCREEN]</div>
+          <div class="blackout-timer" id="blackout-countdown">20</div>
+          <p class="blackout-instruction">
+            Close your eyelids or look 20+ feet into distance. Drop shoulders. Let jaw go slack.
+          </p>
+          <button id="btn-close-blackout" class="b-btn primary lg">RESUME WORK</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/app.js"></script>
+  </body>
+</html>
